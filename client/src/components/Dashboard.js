@@ -1,18 +1,18 @@
-import React from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
-import { Button } from "./ui/button"
-import { Badge } from "./ui/badge"
-import { Progress } from "./ui/progress"
-import TotalScore from "./TotalScore"
-import ProjectList from "./ProjectList"
-import TaskProgress from "./TaskProgress"
-import { Bell, BookOpen, Calendar, ChevronRight, Lightbulb, Rocket, Users } from 'lucide-react'
+import React from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
+import { Progress } from "./ui/progress";
+import TotalScore from "./TotalScore";
+import ProjectList from "./ProjectList";
+import TaskProgress from "./TaskProgress";
+import { Bell, BookOpen, Calendar, ChevronRight, Lightbulb, Rocket, Users } from 'lucide-react';
 
-export const Dashboard = () => {
+const Dashboard = () => {
   return (
     <div className="space-y-8">
       <header className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold gradient-text">Welcome back, Alex!</h1>
+        <h1 className="text-4xl font-bold gradient-text">Welcome back, User!</h1>
         <Button variant="outline" className="flex items-center gap-2">
           <Bell className="h-4 w-4" />
           Notifications
@@ -111,11 +111,9 @@ export const Dashboard = () => {
           </CardHeader>
           <CardContent>
             <ul className="space-y-4">
-              {[
-                { action: 'Completed task', project: 'Project Beta', time: '2 hours ago' },
+              {[{ action: 'Completed task', project: 'Project Beta', time: '2 hours ago' }, 
                 { action: 'Submitted report', project: 'Q2 Analysis', time: 'Yesterday' },
-                { action: 'Started new course', project: 'TypeScript Mastery', time: '3 days ago' },
-              ].map((activity, index) => (
+                { action: 'Started new course', project: 'TypeScript Mastery', time: '3 days ago' }].map((activity, index) => (
                 <li key={index} className="flex items-center justify-between text-sm">
                   <div>
                     <p className="font-medium">{activity.action}</p>
@@ -130,12 +128,12 @@ export const Dashboard = () => {
       </div>
 
       <TotalScore />
-      
       <div className="grid gap-6 lg:grid-cols-2">
         <ProjectList />
         <TaskProgress />
       </div>
     </div>
-  )
-}
+  );
+};
 
+export default Dashboard;
