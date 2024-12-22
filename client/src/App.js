@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Use Routes instead of Switch
 import Header from './components/Header';
 import ProjectList from './components/ProjectList';
 import TaskProgress from './components/TaskProgress';
@@ -13,14 +13,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<ProjectList />} />
           <Route path="/projects" element={<ProjectList />} />
-          <Route 
-            path="/tasks/:projectId" 
-            element={<TaskProgress />} 
-          />
-          <Route 
-            path="/score/:assignmentId" 
-            element={<TotalScore />} 
-          />
+          <Route path="/tasks/:projectId" element={<TaskProgress />} />
+          <Route path="/score/:assignmentId" element={<TotalScore />} />
         </Routes>
       </div>
     </Router>
