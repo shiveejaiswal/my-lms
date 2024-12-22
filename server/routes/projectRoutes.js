@@ -1,8 +1,12 @@
 const express = require('express');
-const { getAvailableProjects, assignProject } = require('../controllers/projectController');
+const { createProject, getAllProjects } = require('../controllers/projectController');
+
 const router = express.Router();
 
-router.get('/', getAvailableProjects);
-router.post('/assign', assignProject);
+// POST: Create project
+router.post('/', createProject);
+
+// GET: Get all projects
+router.get('/', getAllProjects);
 
 module.exports = router;

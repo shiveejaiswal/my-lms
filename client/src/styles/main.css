@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.project-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-list li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-progress ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-progress li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.total-score p {
+    font-size: 24px;
+    font-weight: bold;
+}

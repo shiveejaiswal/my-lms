@@ -1,11 +1,29 @@
 const mongoose = require('mongoose');
 
-const projectSchema = new mongoose.Schema({
-  project_name: { type: String, required: true },
-  description: { type: String, required: true },
-  deadline: { type: Date, required: true },
-  status: { type: String, default: 'available' }, // "available", "assigned"
-  created_at: { type: Date, default: Date.now }
-});
+const projectSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    assignedTo: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Candidate',
+    },
+    tasks: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Task',
+      },
+    ],
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('Project', projectSchema);
+const Project = mongoose.model('Project', projectSchema);
+
+module.exports = Project;

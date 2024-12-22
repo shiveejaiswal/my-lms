@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import ProjectList from './components/ProjectList';
+import TaskProgress from './components/TaskProgress';
+import TotalScore from './components/TotalScore';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<ProjectList />} />
+          <Route path="/projects" element={<ProjectList />} />
+          <Route 
+            path="/tasks/:projectId" 
+            element={<TaskProgress />} 
+          />
+          <Route 
+            path="/score/:assignmentId" 
+            element={<TotalScore />} 
+          />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

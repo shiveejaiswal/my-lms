@@ -1,8 +1,20 @@
 const mongoose = require('mongoose');
 
-const scoreSchema = new mongoose.Schema({
-  candidate_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Candidate' },
-  total_score: { type: Number, default: 0 }
-});
+const scoreSchema = new mongoose.Schema(
+  {
+    assignment: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Assignment',
+      required: true,
+    },
+    score: {
+      type: Number,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('Score', scoreSchema);
+const Score = mongoose.model('Score', scoreSchema);
+
+module.exports = Score;
