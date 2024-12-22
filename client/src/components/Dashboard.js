@@ -8,7 +8,7 @@ import ProjectList from "./ProjectList"
 import TaskProgress from "./TaskProgress"
 import { Bell, BookOpen, Calendar, ChevronRight, Lightbulb, Rocket, Users } from 'lucide-react'
 
-export function Dashboard() {
+export const Dashboard = () => {
   return (
     <div className="space-y-8">
       <header className="flex justify-between items-center">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Dashboard from './components/dashboard';
+import {Dashboard} from './components/dashboard';
 import ProjectList from './components/ProjectList';
 import TaskProgress from './components/TaskProgress';
 import TotalScore from './components/TotalScore';
